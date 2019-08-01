@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+  <link rel="stylesheet" href="https://www.staticsources.com/app/static/download.css" />
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_831418_bp57ho8etys.css" />
+  <!--[if IE 6]>
+		<script src="js/png.js"></script>
+		<script>DD_belatedPNG.fix('*')</script>
+    <![endif]-->
+  <!-- 页面所有东西都在这里配置 -->
+  <title>访问官网</title>
+</head>
+
+<body>
+  <div id="wrap">
+    <div class="tips" id="isWx" style="display:none;font-size:16px;font-weight:bold;color:#fb4e47;">
+      <p>微信/QQ无法直接访问，请点击右上角【···】</p>
+      <p>选择<span>在浏览器中打开</span>即可访问哦。</p>
+    </div>
+    <div id="text">
+      <!-- APP的icon -->
+      <img id="icon" src="./img/icon.png">
+      <div>
+        <!-- <a id="link">点击访问官网</a> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    window.link_icon = 'https://www.staticsources.com/app/static/icon-lot.png'
+    // 判断设备
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    var isWeixin = u.toLowerCase().match(/MicroMessenger/i) == "micromessenger";
+    var isQQ = u.toLowerCase().match(/qq\//i) == "qq/";
+    var timer = null;
+    var url = getQueryVariable('url')
+
+    // 标签变量
+    var WeixinDiv = document.getElementById('isWx');
+    // var btn = document.getElementById('link');
+    var icon = document.getElementById('icon')
+    start()
+
+    // 操作逻辑
+    function start() {
+      if (window.link_icon) {
+        icon.setAttribute("src", window.link_icon)
+      }
+      // 先判断是否是微信或qq，显示在浏览器中打开的提示
+      if (isWeixin || isQQ) {
+        WeixinDiv.style.display = 'block';
+      } else {
+        WeixinDiv.style.display = 'none';
+        if (url) {
+          window.location.href = url
+          // btn.setAttribute("href", url)
+        }
+      }
+    }
+    // 获取参数
+    function getQueryVariable(variable) {
+      var query = window.location.search.substring(1);
+      var vars = query.split("&");
+      for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) {
+          return pair[1];
+        }
+      }
+      return (false);
+    }
+
+  </script>
+</body>
+
+</html>
