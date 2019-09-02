@@ -31,7 +31,7 @@
     var isWeixin = u.toLowerCase().match(/MicroMessenger/i) == "micromessenger";
     var isQQ = u.toLowerCase().match(/qq\//i) == "qq/";
     var timer = null;
-    var url = getQueryVariable('url')
+    var url = getUrl()
     // 标签变量
     var WeixinDiv = document.getElementById('isWx');
     var copy = document.getElementById('copy');
@@ -58,16 +58,9 @@
       };
     }
     // 获取参数
-    function getQueryVariable(variable) {
-      var query = window.location.search.substring(1);
-      var vars = query.split("&");
-      for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split("=");
-        if (pair[0] == variable) {
-          return pair[1];
-        }
-      }
-      return (false);
+    function getUrl(variable) {
+      var query = window.location.search.slice(5);
+      return query
     }
     function initCopy(){
       var clipboard = new Clipboard('.copy-btn');
