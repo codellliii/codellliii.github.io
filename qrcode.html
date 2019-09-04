@@ -12,7 +12,7 @@
 	function makeCode () {
 		// 中间页面，跳转到github,解决微信扫码被封
 		var _url='https://b2b-dream.github.io/qrcode/?url='+(GetQueryString('url')||window.location.origin);
-		var colorDark=GetQueryString('colorDark')||'#ccc'
+		var colorDark=GetQueryString('colorDark')||'#333'
 		var colorLight=GetQueryString('colorLight')||'#fff'
 		var qrcode = new QRCode(document.getElementById("qrcode"), {
 			text: decodeURIComponent(_url),
