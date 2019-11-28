@@ -11,23 +11,9 @@
        window.location.href = "https://gongyi.qq.com/"
     } else if(navigator.userAgent.match(/QQ\//i)) {//QQ 你加你的遮罩 
        window.location.href = "https://gongyi.qq.com/"
-	} else if(navigator.userAgent.match(/(MQQBrowser)/.)) {//QQ浏览器 你加你的遮罩 
-       window.location.href = "https://gongyi.qq.com/"   
     } else if(navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) { //IOS 你应该是跳转
        window.location.href = "https://gongyi.qq.com/"   
     } else if (/(Android)/i.test(navigator.userAgent)) { //安卓 延时跳转
-            window.onload = function () {
-            var count = document.getElementById("count");
-            var num = 5;
-            var timer = setInterval(function () {
-                count.innerHTML = num--;
-                if(num == 0){
-                    clearInterval(timer);
-                    window.location.href = "http://t.cn/Aigxzbob"
-                }
-            },1000);
-        }
-    } else if (/(presto)/i.test(navigator.userAgent)) { //opera 延时跳转
             window.onload = function () {
             var count = document.getElementById("count");
             var num = 5;
@@ -43,10 +29,9 @@
          window.location.href = "https://gongyi.qq.com/"
     } 
 </script>
- <P id="count">5</P>
 	</head>
 	<body>
-
-
+<P id="count">5</P>
 	</body>
 </html>
+
