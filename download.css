@@ -8,12 +8,12 @@ html {
     font-family: "\5FAE\8F6F\96C5\9ED1";
     color: #343434;
     padding-top: 0px;
-    -moz-animation: hScroll 10s infinite linear;
-    -ms-animation: hScroll 10s infinite linear;
-    -o-animation: hScroll 10s infinite linear;
-    -webkit-animation: hScroll 10s infinite linear;
+    -moz-animation: hScroll 15s infinite linear;
+    -ms-animation: hScroll 15s infinite linear;
+    -o-animation: hScroll 15s infinite linear;
+    -webkit-animation: hScroll 15s infinite linear;
     -webkit-font-smoothing: antialiased;
-    animation: hScroll 10s infinite linear;
+    animation: hScroll 15s infinite linear;
     background-image: url('./ico-bg.png');
     background-color: transparent;
     background-position: center center;
